@@ -1,0 +1,49 @@
+//traffic light project
+//my first project
+
+int RedLight    = 1000;
+int GreenLight  = 1000;
+int YellowLight = 300;
+
+//int RedOn     = "Red light is on";
+//int RedOff    = "Red light is off";
+//int YellowOn  = "Yellow light is on";
+//int YellowOff = "Yellow light is off";
+//int GreenOn   = "Green light is on";
+//int GreenOff  = "Green light is off";
+
+void setup(){
+  Serial.begin(9600);
+  
+  pinMode(13,OUTPUT);     Serial.println("pin 13 Red Out");
+  pinMode(12,INPUT);      Serial.println("pin 12 Red In");
+  pinMode(8,OUTPUT);      Serial.println("pin 8 Yellow Out");
+  pinMode(7,INPUT);       Serial.println("pin 7 Yellow In");
+  pinMode(4,OUTPUT);      Serial.println("pin 4 Green Out");
+  pinMode(2,INPUT);       Serial.println("pin 2 Green In");
+  
+  digitalWrite(13,HIGH);  Serial.println("Red light is on");
+  digitalWrite(8,HIGH);   Serial.println("Yellow light is on");
+  digitalWrite(4,HIGH);   Serial.println("Green light is on");
+  
+  digitalRead(12);        //Print value
+  digitalRead(7);         //Print value
+  digitalRead(2);         //Print value
+  
+  digitalWrite(8,LOW);    Serial.println("Yellow light is off");
+  digitalWrite(4,LOW);    Serial.println("Green light is off");
+}
+
+void loop(){
+  digitalWrite(13,HIGH);  Serial.println("Red light is on");
+  delay(RedLight);
+  digitalWrite(13,LOW);   Serial.println("Red light is off");
+  
+  digitalWrite(4,HIGH);   Serial.println("Green light is on");
+  delay(GreenLight);
+  digitalWrite(4,LOW);    Serial.println("Green light is off");
+  
+  digitalWrite(8,HIGH);   Serial.println("Yellow light is on");
+  delay(YellowLight);
+  digitalWrite(8,LOW);    Serial.println("Yellow light is off");  
+}
